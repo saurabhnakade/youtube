@@ -1,9 +1,8 @@
 import React from "react";
 
-const Comment = ({ snippet, idx }) => {
-    console.log(snippet);
+const Comment = ({ snippet }) => {
     return (
-        <li key={idx} className="px-3 py-5 bg-gray-300 my-8 mx-3 rounded-xl">
+        <li className="px-3 py-5 bg-gray-300 my-8 mx-3 rounded-xl">
             <div className="flex items-center">
                 <img
                     className="h-6 mr-2 border border-gray-600 rounded-full"

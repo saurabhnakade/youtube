@@ -19,14 +19,16 @@ const WatchPage = () => {
         const tdata = await fetch(YOUTUBE_VIDEOS_API(6));
         const jsonData = await tdata.json();
 
+        console.log("Doing")
+
+        console.log(jsonData.items)
+
         setData(jsonData.items);
     };
 
     const getVideoComments = async () => {
         const tComments = await fetch(YOUTUBE_VIDEO_COMMENTS(params.get("v")));
         const json = await tComments.json();
-
-        console.log(json.items);
 
         setComments(json.items);
     };
@@ -35,14 +37,14 @@ const WatchPage = () => {
         dispatch(closeMenu());
         getVideos();
         getVideoComments();
-    }, []);
+    }, [params]);
 
     return (
         <div className="col-span-11 flex">
-            <div>
+            <div className="w-[74rem]">
                 <iframe
                     className="ml-12 mt-12"
-                    width="1200"
+                    width="1100"
                     height="600"
                     src={
                         "https://www.youtube.com/embed/" +
@@ -58,7 +60,7 @@ const WatchPage = () => {
                     <ul className="ml-12 mt-14">
                         {comments.map(({ snippet }, idx) => {
                             if (idx < 7)
-                                return <Comment snippet={snippet} idx={idx} />;
+                                return <Comment snippet={snippet} key={idx} />;
                         })}
                     </ul>
                 </div>

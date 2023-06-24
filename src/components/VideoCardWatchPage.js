@@ -10,12 +10,12 @@ const VideoCardWatchPage = ({ info }) => {
             <div className="overflow-hidden h-66 p-2 m-2 mr-10 shadow-lg flex">
                 <img
                     alt="thumbnail"
-                    className="h-60 rounded-lg"
+                    className="h-40 rounded-lg"
                     src={thumbnails?.high?.url}
                 />
                 <div className="ml-4 w-72">
                     <ul>
-                        <li className="font-bold py-2">{title}</li>
+                        <li className="font-bold py-2">{title.length<40?title:title.substring(0,60)+"..."}</li>
                         <li>{channelTitle}</li>
                         <li>{statistics.viewCount}</li>
                     </ul>

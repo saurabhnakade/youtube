@@ -8,25 +8,25 @@ const Sidebar = () => {
     
   return (
     <div className="col-span-1 p-5 shadow-lg">
-        <ul>
-            <Link to="/"><li>Home</li></Link>
-            <li>Shorts</li>
-            <li>Videos</li>
-            <li>Live</li>
+        <ul className='p-4 font-bold text-lg'> 
+            <Link to="/"><li className='mb-4'>Home</li></Link>
+            <li className='mb-4'>Shorts</li>
+            <li className='mb-4'>Videos</li>
+            <Link to="/live"><li>Live</li></Link>
         </ul>
-        <h1 className='pt-5 font-bold'>Subscriptions</h1>
-        <ul>
-            <li>Music</li>
-            <li>Sports</li>
-            <li>Gaming</li>
-            <li>Movies</li>
+        <h1 className='pt-5 font-bold text-xl'>Subscriptions</h1>
+        <ul className='p-4 font-bold text-lg'>
+            <li className='mb-4'>Music</li>
+            <li className='mb-4'>Sports</li>
+            <li className='mb-4'>Gaming</li>
+            <li className='mb-4'>Movies</li>
         </ul>
-        <h1 className='font-bold pt-5'>Watch Later</h1>
-        <ul>
-            <li>Music</li>
-            <li>Sports</li>
-            <li>Gaming</li>
-            <li>Movies</li>
+        <h1 className='font-bold pt-5 text-xl'>Watch Later</h1>
+        <ul className='p-4 font-bold text-lg'>
+            <li className='mb-4'>Music</li>
+            <li className='mb-4'>Sports</li>
+            <li className='mb-4'>Gaming</li>
+            <li className='mb-4'>Movies</li>
         </ul>
     </div>
   )
