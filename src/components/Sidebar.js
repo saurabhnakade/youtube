@@ -12,7 +12,7 @@ const Sidebar = () => {
             <Link to="/"><li className='mb-4'>Home</li></Link>
             <li className='mb-4'>Shorts</li>
             <li className='mb-4'>Videos</li>
-            <Link to="/live"><li>Live</li></Link>
+            <Link to="/live/2"><li>Live</li></Link>
         </ul>
         <h1 className='pt-5 font-bold text-xl'>Subscriptions</h1>
         <ul className='p-4 font-bold text-lg'>

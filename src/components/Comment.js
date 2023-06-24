@@ -5,15 +5,15 @@ const Comment = ({ snippet }) => {
         <li className="px-3 py-5 bg-gray-300 my-8 mx-3 rounded-xl">
             <div className="flex items-center">
                 <img
-                    className="h-6 mr-2 border border-gray-600 rounded-full"
+                    className="h-12 mr-2 rounded-full"
                     alt="user-img"
-                    src="https://www.iconpacks.net/icons/2/free-user-icon-3296-thumb.png"
+                    src={snippet?.topLevelComment?.snippet?.authorProfileImageUrl}
                 />
-                <div className="font-bold text-lg">
+                <div className="font-bold text-lg ml-2">
                     {snippet.topLevelComment.snippet.authorDisplayName}
                 </div>
             </div>
-            <div className="text-md ml-8">
+            <div className="text-md ml-14">
                 {snippet.topLevelComment.snippet.textOriginal}
             </div>
         </li>

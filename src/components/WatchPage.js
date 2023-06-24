@@ -2,10 +2,11 @@ import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { closeMenu } from "../utils/navSlice";
 import { useSearchParams } from "react-router-dom";
-import { YOUTUBE_VIDEOS_API, YOUTUBE_VIDEO_COMMENTS } from "../utils/constants";
+import { YOUTUBE_RELATED_VIDEOS_TO_VIDEO_ID, YOUTUBE_VIDEOS_API, YOUTUBE_VIDEO_COMMENTS } from "../utils/constants";
 import VideoCardWatchPage from "./VideoCardWatchPage";
 import VideoCard from "./VideoCard";
 import Comment from "./Comment";
+import LiveChatPage from "./LiveChatPage";
 
 const WatchPage = () => {
     const dispatch = useDispatch();
@@ -16,12 +17,8 @@ const WatchPage = () => {
     const isMenuOpen = useSelector((store) => store.nav.isMenuOpen);
 
     const getVideos = async () => {
-        const tdata = await fetch(YOUTUBE_VIDEOS_API(6));
+        const tdata = await fetch(YOUTUBE_RELATED_VIDEOS_TO_VIDEO_ID(params.get("v")));
         const jsonData = await tdata.json();
-
-        console.log("Doing")
-
-        console.log(jsonData.items)
 
         setData(jsonData.items);
     };
@@ -59,20 +56,24 @@ const WatchPage = () => {
                 <div>
                     <ul className="ml-12 mt-14">
                         {comments.map(({ snippet }, idx) => {
-                            if (idx < 7)
-                                return <Comment snippet={snippet} key={idx} />;
+                                return <Comment snippet={snippet} key={idx*Math.random()} />;
                         })}
                     </ul>
                 </div>
             </div>
             <div>
-                {data.map((item) => {
-                    if (isMenuOpen) {
-                        return <VideoCard key={item.id} info={item} />;
-                    } else {
-                        return <VideoCardWatchPage key={item.id} info={item} />;
-                    }
-                })}
+                <div>
+                    <LiveChatPage/>
+                </div>
+                <div>
+                    {data.map((item) => {
+                        if (isMenuOpen) {
+                            return <VideoCard key={Math.random()} info={item} />;
+                        } else {
+                            return <VideoCardWatchPage key={Math.random()} info={item} />;
+                        }
+                    })}
+                </div>
             </div>
         </div>
     );

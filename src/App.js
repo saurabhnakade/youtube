@@ -32,7 +32,7 @@ const appRouter=createBrowserRouter([
           element:<SearchResultPage/>
         },
         {
-          path:"/live",
+          path:"/live/:id",
           element:<LiveChatPage/>
         },
         {

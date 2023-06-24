@@ -2,11 +2,11 @@ import React from "react";
 
 const LiveChatMessage = (props) => {
     return (
-        <div className="flex items-center">
+        <div className="flex items-center p-2">
             <img
-                className="h-10 border border-gray-600 rounded-full"
+                className="h-9 rounded-full"
                 alt="user-icon"
-                src="https://www.iconpacks.net/icons/2/free-user-icon-3296-thumb.png"
+                src={props.img}
             />
             <div className="font-bold mx-3">{props.name}</div>
             <div>{props.message} 🚀</div>
