@@ -1,4 +1,5 @@
-const GOOGLE_API_KEY=process.env.REACT_APP_GOOGLE_API_KEY;
+// const GOOGLE_API_KEY=process.env.REACT_APP_GOOGLE_API_KEY;
+const GOOGLE_API_KEY="AIzaSyBFHaiDcvGFwEQirXQ1mK3VmF6sRvP0P7M";
 
 const corsProxy="https://corsproxy.io/?";
 

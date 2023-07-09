@@ -63,7 +63,7 @@ const WatchPage = () => {
             </div>
             <div>
                 <div>
-                    <LiveChatPage/>
+                    <LiveChatPage t={data}/>
                 </div>
                 <div>
                     {data.map((item) => {

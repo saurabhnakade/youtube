@@ -7,7 +7,7 @@ import { generateMessage } from "../utils/generateMessage";
 import { generateProfileImage } from "../utils/generateProfileImages";
 import { useParams } from "react-router-dom";
 
-const LiveChatPage = () => {
+const LiveChatPage = ({t}) => {
     const dispatch=useDispatch();
     const [msg,setMsg]=useState("");
 
